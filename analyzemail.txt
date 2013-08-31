@@ -7,7 +7,7 @@
 # Credit: This code was inspired in part by Sam Pullara
 # http://www.javarants.com/2008/12/26/build-your-own-mail-analyzer-for-mac-mailapp/
 
-# Steps ==================================================================
+# Steps ============================================================================
 # 1. Copy the Mac Mail "Envelope Index" file to a working directory
 # At a terminal window type (w/escape for space in "Envelope Index"):
 
@@ -20,23 +20,23 @@ cp ~/Library/Mail/V2/MailData/Envelope\ Index ~/your_working_directory/envindex
 cd ~/your_working_directory/envindex
 sqlite3 envindex
 
-# SQLite3 Commands ========================================================
+# SQLite3 Commands ==================================================================
 # Below are optional sqlite3 commands for analyzing the "envindex" tables
 # For more sqlite3 help see: http://www.sqlite.org
 # Or see w3schools SQL docs: http://www.w3schools.com/sql/ 
 # In the examples below, replace "top 10" with another number by changing 
 # the value in "limit 10;" to another number
 
-# Look at tables in envindex in sqlite3 ----------------------------------
+# Look at tables in envindex in sqlite3 ---------------------------------------------
 .tables
 
-# Look at all columns and rows in a table --------------------------------
+# Look at all columns and rows in a table -------------------------------------------
 select * from mailboxes;
 
-# Count the total number of emails in MacMail ----------------------------
+# Count the total number of emails in MacMail ---------------------------------------
 select count(*) from messages;
 
-# Find top 10 senders of emails in all mailboxes -------------------------
+# Find top 10 senders of emails in all mailboxes ------------------------------------
 select count(*), m.sender, a.comment, a.address, m.mailbox 
 from messages m 
 inner join addresses a 
@@ -45,7 +45,7 @@ group by a.address
 order by count(*) desc  
 limit 10;
 
-# Find top 10 mailboxes with the most messages ---------------------------
+# Find top 10 mailboxes with the most messages --------------------------------------
 select count(*),  m.mailbox, b.url 
 from messages m 
 inner join mailboxes b 
@@ -54,7 +54,7 @@ group by m.mailbox
 order by count(*) desc  
 limit 10;
 
-# Find top 10 senders of emails in a specified mailbox -------------------
+# Find top 10 senders of emails in a specified mailbox ------------------------------
 # Step 1) Look at mailboxes table to get mailbox ID number by typing:
 select * from mailboxes;
 
@@ -68,8 +68,8 @@ group by a.address
 order by count(*) desc  
 limit 10;
 
-# Find top 10 senders of most emails in a specified mailbox -------------
-# and within a specific date range                          -------------
+# Find top 10 senders of most emails in a specified mailbox ------------------------
+# and within a specific date range                          ------------------------
 # Note: Use epoch converter to get epoch time for Julian calendar 
 # dates: http://www.epochconverter.com
 select count(*), m.sender, a.comment, a.address, m.mailbox, m.date_sent 
