@@ -16,10 +16,12 @@ cp ~/Library/Mail/V2/MailData/Envelope\ Index ~/your_working_directory/envindex
 
 sqlite3 envindex
 
-# 3. Below are optional sqlite3 commands for analyzing the envindex tables
+# SQLite3 Commands ========================================================
+# Below are optional sqlite3 commands for analyzing the "envindex" tables
 # For more sqlite3 help see: http://www.sqlite.org
 # Or see w3schools SQL docs: http://www.w3schools.com/sql/ 
-# Replace "top 10" with another number by changing the value in "limit 10;"
+# In the examples below, replace "top 10" with another number by changing 
+# the value in "limit 10;" to another number
 
 # Look at tables in envindex in sqlite3 ----------------------------------
 .tables
@@ -61,7 +63,6 @@ where m.mailbox = 73
 group by a.address
 order by count(*) desc  
 limit 10;
-
 
 # Find top 10 senders of most emails in a specified mailbox -------------
 # within a specific date range
