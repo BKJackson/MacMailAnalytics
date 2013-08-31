@@ -52,7 +52,7 @@ limit 10;
 # Step 1) Look at mailboxes table to get mailbox ID number by typing:
 select * from mailboxes;
 
-# Step 2) Get top 10 senders from mailbox ID number 73
+# Step 2) Get top 10 senders from mailbox ID number 73 (or another ID)
 select count(*), m.sender, a.comment, a.address, m.mailbox 
 from messages m 
 inner join addresses a 
@@ -64,7 +64,7 @@ limit 10;
 
 
 # Find top 10 senders of most emails in a specified mailbox -------------
-# within a date range
+# within a specific date range
 # Note: Use epoch converter to get epoch time for Julian calendar 
 # dates: http://www.epochconverter.com
 select count(*), m.sender, a.comment, a.address, m.mailbox, m.date_sent 
