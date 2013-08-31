@@ -1,7 +1,8 @@
 # Filename: analyzemail.txt
 # Purpose: Code to analyze Mac mail sqlite3 tables
 # Last Updated: 8/5/2013
-# Usage: Apply code at the command line in a terminal window. This is not a script to be run.
+# Usage: Apply code at the command line in a terminal window. This is not 
+# a script to be run.
 # Author: J. S. Floyd
 
 # Steps ============================================================
@@ -18,17 +19,18 @@ sqlite3 envindex
 # 3. Below are optional sqlite3 commands for analyzing the envindex tables
 # For more sqlite3 help see: http://www.sqlite.org
 # Or see w3schools SQL docs: http://www.w3schools.com/sql/ 
+# Replace "top 10" with another number by changing the value in "limit 10;"
 
-# Look at tables in envindex in sqlite3, type:
+# Look at tables in envindex in sqlite3 ---------------------------------
 .tables
 
-# Look at all columns and rows in a table, type:
+# Look at all columns and rows in a table -------------------------------
 select * from mailboxes;
 
-# Count the total number of emails in MacMail, type:
+# Count the total number of emails in MacMail --------------------------
 select count(*) from messages;
 
-# Find top 10 senders of emails in all mailboxes, type:
+# Find top 10 senders of emails in all mailboxes -----------------------
 select count(*), m.sender, a.comment, a.address, m.mailbox 
 from messages m 
 inner join addresses a 
@@ -37,7 +39,7 @@ group by a.address
 order by count(*) desc  
 limit 10;
 
-# Find top 10 mailboxes with the most messages, type:
+# Find top 10 mailboxes with the most messages -------------------------
 select count(*),  m.mailbox, b.url 
 from messages m 
 inner join mailboxes b 
@@ -46,11 +48,11 @@ group by m.mailbox
 order by count(*) desc  
 limit 10;
 
-# Find top 10 senders of emails in a specified mailbox
-# 1) Look at mailboxes table to get mailbox ID number by typing:
+# Find top 10 senders of emails in a specified mailbox ----------------
+# Step 1) Look at mailboxes table to get mailbox ID number by typing:
 select * from mailboxes;
 
-# 2) Get top 10 senders from mailbox ID number 73
+# Step 2) Get top 10 senders from mailbox ID number 73
 select count(*), m.sender, a.comment, a.address, m.mailbox 
 from messages m 
 inner join addresses a 
@@ -61,9 +63,18 @@ order by count(*) desc
 limit 10;
 
 
-
-
-
+# Find top 10 senders of most emails in a specified mailbox ------------
+# within a date range
+# Note: Use epoch converter to get epoch time for Julian calendar 
+# dates: http://www.epochconverter.com
+select count(*), m.sender, a.comment, a.address, m.mailbox, m.date_sent 
+from messages m 
+inner join addresses a 
+on m.sender = a.rowid
+where m.date_sent between 1356998400 and 1370044800
+group by a.address
+order by count(*) desc  
+limit 10;
 
 
 
