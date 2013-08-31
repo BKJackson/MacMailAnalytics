@@ -9,7 +9,7 @@
 
 # Steps ============================================================================
 # 1. Copy the Mac Mail "Envelope Index" file to a working directory
-# At a terminal window type (w/escape for space in "Envelope Index"):
+# At the terminal window type (w/escape for space in "Envelope Index"):
 
 mkdir ~/your_working_directory
 cp ~/Library/Mail/V2/MailData/Envelope\ Index ~/your_working_directory/envindex
@@ -25,12 +25,13 @@ sqlite3 envindex
 # For more sqlite3 help see: http://www.sqlite.org
 # Or see w3schools SQL docs: http://www.w3schools.com/sql/ 
 # In the examples below, replace "top 10" with another number by changing 
-# the value in "limit 10;" to another number
+# the value in "limit 10;"
 
 # Look at tables in envindex in sqlite3 ---------------------------------------------
 .tables
 
 # Look at all columns and rows in a table -------------------------------------------
+# Note: Replace "mailboxes" with any table name
 select * from mailboxes;
 
 # Count the total number of emails in MacMail ---------------------------------------
