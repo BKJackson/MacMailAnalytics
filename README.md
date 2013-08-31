@@ -1,7 +1,7 @@
 MacMailAnalytics
 ================
 
-Purpose: SQLite Code for analyzing Mac Mail sqlite3 tables
+Purpose: Code for analyzing Mac Mail sqlite3 tables
 
 Last updated: 8/31/2013
 
