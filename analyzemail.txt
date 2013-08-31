@@ -4,6 +4,8 @@
 # Usage: Apply code at the command line in a terminal window. This is not 
 # a script to be run.
 # Author: J. S. Floyd, Brooklyn, NY
+# Credit: This code was inspired in part by Sam Pullara
+# http://www.javarants.com/2008/12/26/build-your-own-mail-analyzer-for-mac-mailapp/
 
 # Steps ==================================================================
 # 1. Copy the Mac Mail "Envelope Index" file to a working directory
