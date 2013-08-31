@@ -5,7 +5,7 @@
 # a script to be run.
 # Author: J. S. Floyd
 
-# Steps ============================================================
+# Steps ==================================================================
 # 1. Copy the Mac Mail "Envelope Index" file to a working directory
 # At a terminal window type (w/escape for space in "Envelope Index"):
 
@@ -21,16 +21,16 @@ sqlite3 envindex
 # Or see w3schools SQL docs: http://www.w3schools.com/sql/ 
 # Replace "top 10" with another number by changing the value in "limit 10;"
 
-# Look at tables in envindex in sqlite3 ---------------------------------
+# Look at tables in envindex in sqlite3 ----------------------------------
 .tables
 
-# Look at all columns and rows in a table -------------------------------
+# Look at all columns and rows in a table --------------------------------
 select * from mailboxes;
 
-# Count the total number of emails in MacMail --------------------------
+# Count the total number of emails in MacMail ----------------------------
 select count(*) from messages;
 
-# Find top 10 senders of emails in all mailboxes -----------------------
+# Find top 10 senders of emails in all mailboxes -------------------------
 select count(*), m.sender, a.comment, a.address, m.mailbox 
 from messages m 
 inner join addresses a 
@@ -39,7 +39,7 @@ group by a.address
 order by count(*) desc  
 limit 10;
 
-# Find top 10 mailboxes with the most messages -------------------------
+# Find top 10 mailboxes with the most messages ---------------------------
 select count(*),  m.mailbox, b.url 
 from messages m 
 inner join mailboxes b 
@@ -48,7 +48,7 @@ group by m.mailbox
 order by count(*) desc  
 limit 10;
 
-# Find top 10 senders of emails in a specified mailbox ----------------
+# Find top 10 senders of emails in a specified mailbox -------------------
 # Step 1) Look at mailboxes table to get mailbox ID number by typing:
 select * from mailboxes;
 
@@ -63,7 +63,7 @@ order by count(*) desc
 limit 10;
 
 
-# Find top 10 senders of most emails in a specified mailbox ------------
+# Find top 10 senders of most emails in a specified mailbox -------------
 # within a date range
 # Note: Use epoch converter to get epoch time for Julian calendar 
 # dates: http://www.epochconverter.com
