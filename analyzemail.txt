@@ -1,1 +1,73 @@
 # Filename: analyzemail.txt
+# Purpose: Code to analyze Mac mail sqlite3 tables
+# Last Updated: 8/5/2013
+# Usage: Apply code at the command line in a terminal window. This is not a script to be run.
+# Author: J. S. Floyd
+
+# Steps ============================================================
+# 1. Copy the Mac Mail "Envelope Index" file to a working directory
+# At a terminal window type (w/escape for space in "Envelope Index"):
+
+cp ~/Library/Mail/V2/MailData/Envelope\ Index ~/your_working_directory/envindex
+
+# 2. Open the envindex file in sqlite3
+# At the terminal window type:
+
+sqlite3 envindex
+
+# 3. Below are optional sqlite3 commands for analyzing the envindex tables
+# For more sqlite3 help see: http://www.sqlite.org
+# Or see w3schools SQL docs: http://www.w3schools.com/sql/ 
+
+# Look at tables in envindex in sqlite3, type:
+.tables
+
+# Look at all columns and rows in a table, type:
+select * from mailboxes;
+
+# Count the total number of emails in MacMail, type:
+select count(*) from messages;
+
+# Find top 10 senders of emails in all mailboxes, type:
+select count(*), m.sender, a.comment, a.address, m.mailbox 
+from messages m 
+inner join addresses a 
+on m.sender = a.rowid 
+group by a.address
+order by count(*) desc  
+limit 10;
+
+# Find top 10 mailboxes with the most messages, type:
+select count(*),  m.mailbox, b.url 
+from messages m 
+inner join mailboxes b 
+on m.mailbox = b.rowid
+group by m.mailbox
+order by count(*) desc  
+limit 10;
+
+# Find top 10 senders of emails in a specified mailbox
+# 1) Look at mailboxes table to get mailbox ID number by typing:
+select * from mailboxes;
+
+# 2) Get top 10 senders from mailbox ID number 73
+select count(*), m.sender, a.comment, a.address, m.mailbox 
+from messages m 
+inner join addresses a 
+on m.sender = a.rowid
+where m.mailbox = 73
+group by a.address
+order by count(*) desc  
+limit 10;
+
+
+
+
+
+
+
+
+
+
+
+
