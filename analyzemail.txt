@@ -1,9 +1,9 @@
 # Filename: analyzemail.txt
 # Purpose: Code to analyze Mac mail sqlite3 tables
-# Last Updated: 8/5/2013
+# Last Updated: 8/31/2013
 # Usage: Apply code at the command line in a terminal window. This is not 
 # a script to be run.
-# Author: J. S. Floyd
+# Author: J. S. Floyd, Brooklyn, NY
 
 # Steps ==================================================================
 # 1. Copy the Mac Mail "Envelope Index" file to a working directory
