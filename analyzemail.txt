@@ -9,6 +9,7 @@
 # 1. Copy the Mac Mail "Envelope Index" file to a working directory
 # At a terminal window type (w/escape for space in "Envelope Index"):
 
+mkdir ~/your_working_directory
 cp ~/Library/Mail/V2/MailData/Envelope\ Index ~/your_working_directory/envindex
 
 # 2. Open the envindex file in sqlite3
