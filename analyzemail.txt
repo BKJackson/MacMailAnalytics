@@ -65,7 +65,7 @@ order by count(*) desc
 limit 10;
 
 # Find top 10 senders of most emails in a specified mailbox -------------
-# within a specific date range
+# and within a specific date range                          -------------
 # Note: Use epoch converter to get epoch time for Julian calendar 
 # dates: http://www.epochconverter.com
 select count(*), m.sender, a.comment, a.address, m.mailbox, m.date_sent 
