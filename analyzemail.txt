@@ -14,6 +14,7 @@ cp ~/Library/Mail/V2/MailData/Envelope\ Index ~/your_working_directory/envindex
 # 2. Open the envindex file in sqlite3
 # At the terminal window type:
 
+cd ~/your_working_directory/envindex
 sqlite3 envindex
 
 # SQLite3 Commands ========================================================
