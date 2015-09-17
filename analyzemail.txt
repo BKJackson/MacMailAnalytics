@@ -2,7 +2,7 @@
 # Purpose: Code to analyze Mac mail sqlite3 tables
 # Last Updated: 8/31/2013
 # Usage: Apply code at the command line in a Terminal.app window (in the Utilities 
-# folder). This is not a script to be run.
+# folder). This is not a script to be run all at once.
 # Author: J. S. Floyd, Brooklyn, NY
 # Credit: This code was inspired in part by Sam Pullara
 # http://www.javarants.com/2008/12/26/build-your-own-mail-analyzer-for-mac-mailapp/
