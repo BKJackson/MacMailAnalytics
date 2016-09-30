@@ -9,4 +9,4 @@ Created: 8/31/2013
 
 Last updated: 9/30/2016
 
-Author: J. S. Floyd, Brooklyn, NY
+Author: J. S. Floyd, Austin, TX
