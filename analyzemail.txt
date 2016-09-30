@@ -1,5 +1,5 @@
 # Filename: analyzemail.txt
-# Purpose: Code to analyze Mac mail sqlite3 tables
+# Purpose: Analyze Mac mail sqlite3 tables
 # Last Updated: 8/31/2013
 # Usage: Apply code at the command line in a Terminal.app window (in the Utilities 
 # folder). This is not a script to be run all at once.
