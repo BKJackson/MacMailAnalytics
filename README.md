@@ -1,10 +1,12 @@
 MacMailAnalytics
 ================
 
-Purpose: Code for analyzing Mac Mail sqlite3 tables
+Too many unread emails in too many folders? Want to analyze who has been emailing you what so that you can better manage your emails?  Me, too.  That's why I created this cheatsheet-style file of sqlite commands.  Enjoy.      
 
-Last updated: 8/31/2013
+Purpose: Analyzing Mac Mail sqlite3 tables. 
 
-Usage: Code is intended to be applied at the terminal command line
+Created: 8/31/2013
+
+Last updated: 9/30/2016
 
 Author: J. S. Floyd, Brooklyn, NY
